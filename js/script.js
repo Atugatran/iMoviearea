@@ -16,7 +16,7 @@ function loadApis() {
     const movieName = Name.substring(0, 15);
     const shortName = movieName.length > 13 ? `${movieName}...` : movieName;
     return `
-        <a href="#">
+    <a href="#" class="card_con">
         <div class="card">
             <div class="card-info">
                 <h2 class="Name">${shortName}</h2>
@@ -29,4 +29,4 @@ function loadApis() {
   Movies_container.innerHTML = Movies_item.join("");
 }
 
-// Search
+
