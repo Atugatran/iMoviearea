@@ -12,7 +12,7 @@ fetch("https://bogotas.github.io/_Apis/Movies/index.json")
 function loadApis() {
   let Movies_container = document.getElementById("Movies-container");
   let Movies_item = Movie.map((i) => {
-    const { Porter, Name } = i;
+    const { Poster, Name } = i;
     const movieName = Name.substring(0, 15);
     const shortName = movieName.length > 13 ? `${movieName}...` : movieName;
     return `
@@ -20,7 +20,7 @@ function loadApis() {
         <div class="card">
             <div class="card-info">
                 <h2 class="Name">${shortName}</h2>
-                <img src=${Porter} alt="#" />
+                <img src=${Poster} alt="#" />
             </div>
         </div>
     </a>
