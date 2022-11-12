@@ -203,6 +203,43 @@ a:hover img {
   padding: 1.2rem 3.6rem;
 }
 
+/* Top */
+.top-section,
+.Bottom-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 95vw;
+  padding: 2rem;
+  color: snow;
+  gap: 2rem;
+}
+
+.heading {
+  font-size: 2.8rem;
+}
+
+.desc {
+  font-size: 1.45rem;
+  text-align: justify;
+}
+
+/* Bottam */
+.subheading {
+  color: snow;
+  font-size: 2rem;
+}
+
+.MovieInfo_cont {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.data {
+  font-size: 2rem;
+}
 /* responsive code   */
 @media (max-width: 1200px) {
   .container {
