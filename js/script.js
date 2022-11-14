@@ -1,6 +1,6 @@
 let Movie = null;
 // Get Api
-fetch("https://bogotas.github.io/_Apis/Movies/index.json")
+fetch("https://atugatran-projects.github.io/_Apis/Movies/index.json")
   .then((res) => res.json())
   .then((result) => {
     Movie = result;

@@ -106,7 +106,7 @@ input {
 
 .movie-section {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: var(--text-clr);
   display: grid;
   place-items: center;
@@ -199,18 +199,24 @@ a:hover img {
   transform: scale(1.1);
 }
 
-.back-btn {
-  padding: 1.2rem 3.6rem;
+.download-btn {
+  padding: 1.2rem 1.5rem;
+  margin: 0.5rem;
+  border: 1px solid black;
+  width: 100%;
+  max-width: 13rem;
+  font-size: 1.4rem;
+  text-align: center;
 }
 
 /* Top */
 .top-section,
 .Bottom-section {
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  width: 95vw;
-  padding: 2rem;
+  width: 90vw;
+  padding: 2rem 0;
   color: snow;
   gap: 2rem;
 }
@@ -225,9 +231,34 @@ a:hover img {
 }
 
 /* Bottam */
+.Bottom-section {
+  padding-top: 4rem;
+}
+.MovieInfo tr {
+  display: flex;
+}
 .subheading {
   color: snow;
   font-size: 2rem;
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+}
+
+.center-subheading {
+  color: snow;
+  font-size: 2.5rem;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  text-align: center;
+}
+
+.Movie-story {
+  font-size: 1.5rem;
 }
 
 .MovieInfo_cont {
@@ -238,8 +269,38 @@ a:hover img {
 }
 
 .data {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  color: seashell;
 }
+.Screenshots {
+  text-align: center;
+}
+
+.download-btn {
+  padding: 1.2rem 1.5rem;
+  margin: 0.5rem;
+  border: 1px solid snow;
+  width: 100%;
+  max-width: 13rem;
+  font-size: 1.4rem;
+  text-align: center;
+  color: snow;
+  font-weight: 600;
+  transition: all 0.5s linear;
+}
+
+.download-btn:hover {
+  background-color: lavender;
+  color: black;
+}
+.left-cont {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: start;
+  padding: 1rem;
+}
+
 /* responsive code   */
 @media (max-width: 1200px) {
   .container {
@@ -278,7 +339,7 @@ a:hover img {
     padding-bottom: 1rem;
   }
 
-  .back-btn {
+  .download-btn {
     margin-bottom: 3rem;
   }
 }
@@ -290,5 +351,8 @@ a:hover img {
   }
   .grid-4-col {
     grid-template-columns: 1fr;
+  }
+  .Screenshots img {
+    width: 90vw;
   }
 }
