@@ -20,11 +20,8 @@ fetch("https://atugatran-projects.github.io/_Apis/Movies/index.json")
 function loadApis() {
   let Movies_container = document.getElementById("Movies-container");
   let Movies_item = Movie.map((i) => {
-    const { Poster, Name, Key } = i;
-    // console.log(Key);
-
-    for (let j = -1; j < Movie.length; j++) {
-      let ApiKey = Key[j];
+    const { Key } = i;
+      let ApiKey = Key;
       if (ApiKey === urlKey) {
         let data = Movie[ApiKey - 1];
         const {
@@ -108,13 +105,13 @@ function loadApis() {
         </div>
         <h3 class="center-subheading">Movie-SYNOPSIS/PLOT:</h3>
         <p class="Movie-story">${Movie_story}</p>
-        <h3 class="center-subheading">Screenshots: (Must See Before Downloading)…</h3>
+        <h3 class="center-subheading">Screenshots: (Must See Before Downloading)</h3>
         <div class="Screenshots">
             <figure>
-                <img src="${Screenshots1}" alt="Screenshots">
-                <img src="${Screenshots2}" alt="Screenshots">
-                <img src="${Screenshots3}" alt="Screenshots">
-                <img src="${Screenshots4}" alt="Screenshots">
+                <img src="${Screenshots1}" class="img_screenshot" alt="Screenshots">
+                <img src="${Screenshots2}" class="img_screenshot" alt="Screenshots">
+                <img src="${Screenshots3}" class="img_screenshot" alt="Screenshots">
+                <img src="${Screenshots4}" class="img_screenshot" alt="Screenshots">
             </figure>
             <div class="center-subheading">
                 <h3 class="center-subheading">${Download_title}</h3>
@@ -127,7 +124,7 @@ function loadApis() {
     <div>
 </section>
   `;
-      }
+    //   }
     }
   });
   Movies_container.innerHTML = Movies_item.join("");

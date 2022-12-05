@@ -44,6 +44,14 @@ img {
   border-radius: 1rem;
   transition: all 0.3s linear;
 }
+.img_screenshot{
+    width: 50rem;
+    max-width: 50rem;
+    max-height: 30rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    transition: all 0.3s linear;
+}
 
 /* resuable code  */
 .container {
