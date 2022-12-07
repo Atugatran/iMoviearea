@@ -19,36 +19,38 @@ fetch("https://atugatran-projects.github.io/_Apis/Movies/index.json")
 // // i'm gonna parse the url so my websites json data is not effected;
 function loadApis() {
   let Movies_container = document.getElementById("Movies-container");
-  let Movies_item = Movie.map((i) => {
+  let Downloads = Movie[urlKey - 1].downloads;
+  console.log(Downloads);
+  let Movies_item_top = Movie.map((i) => {
     const { Key } = i;
-      let ApiKey = Key;
-      if (ApiKey === urlKey) {
-        let data = Movie[ApiKey - 1];
-        const {
-          Title,
-          Desc,
-          Poster,
-          Subtitles,
-          Screenshots1,
-          Screenshots2,
-          Screenshots3,
-          Screenshots4,
-          Language,
-          Download_title,
-          Download,
-          Quality,
-          Movie_story,
-          Format,
-          Size,
-          Name,
-          Key,
-          Release,
-          Genres,
-          IMDB,
-          Country,
-        } = data;
-        document.title = Name;
-        return ` 
+    let ApiKey = Key;
+    if (ApiKey === urlKey) {
+      let data = Movie[ApiKey - 1];
+      const {
+        Title,
+        Desc,
+        Poster,
+        Subtitles,
+        Screenshots1,
+        Screenshots2,
+        Screenshots3,
+        Screenshots4,
+        Language,
+        // Download_title,
+        // Download,
+        Quality,
+        Movie_story,
+        Format,
+        Size,
+        Name,
+        Key,
+        Release,
+        Genres,
+        IMDB,
+        Country,
+      } = data;
+      document.title = Name;
+      return ` 
   <section class="movie-section" key=${Key}>
     <!-- Top -->
     <div class="top-section">
@@ -113,19 +115,24 @@ function loadApis() {
                 <img src="${Screenshots3}" class="img_screenshot" alt="Screenshots">
                 <img src="${Screenshots4}" class="img_screenshot" alt="Screenshots">
             </figure>
-            <div class="center-subheading">
-                <h3 class="center-subheading">${Download_title}</h3>
-                <a href="${Download}" class="download-btn">Download</a>
-            </div>
+            <div class="center-subheading" id="Downloads_container"></div>
         </div>
     </div>
     <div class="left-cont">
-    <a href="index.html" class="download-btn">Back</a>
+        <a href="index.html" class="download-btn">Back</a>
     <div>
-</section>
-  `;
-    //   }
+ </section>
+            `;
     }
   });
-  Movies_container.innerHTML = Movies_item.join("");
+  Movies_container.innerHTML = Movies_item_top;
+  let Downloads_container = document.getElementById("Downloads_container");
+  let Downloads_item = Downloads.map((i) => {
+    const { Download, Download_title, Key } = i;
+    return `
+            <h3 Key=${Key} class="center-subheading">${Download_title}</h3>
+            <a href="${Download}" class="download-btn">Download</a>
+            `;
+  });
+  Downloads_container.innerHTML = Downloads_item;
 }
