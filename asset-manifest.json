@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/iMoviearea/static/css/main.489b09e4.css",
+    "main.js": "/iMoviearea/static/js/main.3ea5fbe7.js",
+    "static/js/787.992643b3.chunk.js": "/iMoviearea/static/js/787.992643b3.chunk.js",
+    "index.html": "/iMoviearea/index.html",
+    "main.489b09e4.css.map": "/iMoviearea/static/css/main.489b09e4.css.map",
+    "main.3ea5fbe7.js.map": "/iMoviearea/static/js/main.3ea5fbe7.js.map",
+    "787.992643b3.chunk.js.map": "/iMoviearea/static/js/787.992643b3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.489b09e4.css",
+    "static/js/main.3ea5fbe7.js"
+  ]
+}
