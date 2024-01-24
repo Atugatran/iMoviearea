@@ -1,6 +1,6 @@
 let Movie = null;
 // Get Api
-fetch("https://atugatran-projects.github.io/_Apis/Movies/index.json")
+fetch("https://atugatranapi.pages.dev/Movies/index.json")
   .then((res) => res.json())
   .then((result) => {
     Movie = result;

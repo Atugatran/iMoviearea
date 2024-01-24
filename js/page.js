@@ -8,49 +8,49 @@ const urlKey = urlquery.get("Key");
 
 let Movie = null;
 // // Get Api
-fetch("https://atugatran-projects.github.io/_Apis/Movies/index.json")
-  .then((res) => res.json())
-  .then((result) => {
-    Movie = result;
-    loadApis();
-  });
+fetch("https://atugatranapi.pages.dev/Movies/index.json")
+    .then((res) => res.json())
+    .then((result) => {
+        Movie = result;
+        loadApis();
+    });
 
 // // NOTE
 // // i'm gonna parse the url so my websites json data is not effected;
 function loadApis() {
-  let Movies_container = document.getElementById("Movies-container");
-  let Downloads = Movie[urlKey - 1].downloads;
-  console.log(Downloads);
-  let Movies_item_top = Movie.map((i) => {
-    const { Key } = i;
-    let ApiKey = Key;
-    if (ApiKey === urlKey) {
-      let data = Movie[ApiKey - 1];
-      const {
-        Title,
-        Desc,
-        Poster,
-        Subtitles,
-        Screenshots1,
-        Screenshots2,
-        Screenshots3,
-        Screenshots4,
-        Language,
-        // Download_title,
-        // Download,
-        Quality,
-        Movie_story,
-        Format,
-        Size,
-        Name,
-        Key,
-        Release,
-        Genres,
-        IMDB,
-        Country,
-      } = data;
-      document.title = Name;
-      return ` 
+    let Movies_container = document.getElementById("Movies-container");
+    let Downloads = Movie[urlKey - 1].downloads;
+    console.log(Downloads);
+    let Movies_item_top = Movie.map((i) => {
+        const { Key } = i;
+        let ApiKey = Key;
+        if (ApiKey === urlKey) {
+            let data = Movie[ApiKey - 1];
+            const {
+                Title,
+                Desc,
+                Poster,
+                Subtitles,
+                Screenshots1,
+                Screenshots2,
+                Screenshots3,
+                Screenshots4,
+                Language,
+                // Download_title,
+                // Download,
+                Quality,
+                Movie_story,
+                Format,
+                Size,
+                Name,
+                Key,
+                Release,
+                Genres,
+                IMDB,
+                Country,
+            } = data;
+            document.title = Name;
+            return ` 
   <section class="movie-section" key=${Key}>
     <!-- Top -->
     <div class="top-section">
@@ -123,16 +123,16 @@ function loadApis() {
     <div>
  </section>
             `;
-    }
-  });
-  Movies_container.innerHTML = Movies_item_top;
-  let Downloads_container = document.getElementById("Downloads_container");
-  let Downloads_item = Downloads.map((i) => {
-    const { Download, Download_title, Key } = i;
-    return `
+        }
+    });
+    Movies_container.innerHTML = Movies_item_top;
+    let Downloads_container = document.getElementById("Downloads_container");
+    let Downloads_item = Downloads.map((i) => {
+        const { Download, Download_title, Key } = i;
+        return `
             <h3 Key=${Key} class="center-subheading">${Download_title}</h3>
             <a href="${Download}" class="download-btn">Download</a>
             `;
-  });
-  Downloads_container.innerHTML = Downloads_item;
+    });
+    Downloads_container.innerHTML = Downloads_item;
 }
